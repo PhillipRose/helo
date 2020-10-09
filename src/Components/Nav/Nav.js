@@ -1,14 +1,27 @@
-import React, {Component} from 'react'
+import React from 'react'
+import {withRouter, Link} from 'react-router-dom';
 
 
-export default class Nav extends Component {
+const Nav = props =>  {
 
+console.log(props);
 
-    render(){
+    
         return(
-            <p>
-                Nav Component
-            </p>
+            // <p>Nav Component</p>
+            <div className='nav-bar'>
+                
+                 {/* {props.location.pathname !== '/'
+            ? ( */}
+                <nav>
+                <Link to='/Dashboard' className='nav-links'>Home</Link>
+                <Link to='/new' className='nav-links'>New Post</Link>
+                <Link to='/' className='nav-links'>Logout</Link>
+               </nav>
+               {/* )
+            : null}  */}
+
+            </div>
         )
     }
-}
+export default Nav
